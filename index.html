@@ -29,7 +29,7 @@
 					<li v-for="(item,index) of filterTodos" v-bind:class="{completed:item.state,editing: item === currentItem}">
 						<div class="view">
 							<input class="toggle" type="checkbox" v-model="item.state">
-							<label @dblclick="currentItem = item">{{item.name}}</label>
+							<label @dblclick="currentItem = item" v-editing-focus="item === currentItem" >{{item.name}}</label>
 							<button class="destroy" @click="del(index)"></button>
 						</div>
 						<input class="edit"  @keyup.esc="currentItem = ''"  :value="item.name" @keyup.enter="save(index,$event)"

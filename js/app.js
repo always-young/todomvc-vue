@@ -1,13 +1,19 @@
 ;
 (function (Vue) {
 	const todos = JSON.parse(window.localStorage.getItem('todos') || '[]');
-	console.log(todos);
 	Vue.directive('focus', {
 		inserted: function (el) {
 			el.focus();
 		}
 	});
+	Vue.directive('editing-focus', {
 
+		update(el, bool) {
+			if (bool) {
+				el.parentElement.parentElement.getElementsByClassName("edit")[0].focus();
+			}
+		}
+	});
 	window.hello = new Vue({
 		el: '#my',
 		data: {
