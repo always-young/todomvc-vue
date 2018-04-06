@@ -20,7 +20,7 @@
 		<!-- This section should be hidden by default and shown when there are todos -->
 		<template v-if="todos.length">
 			<section class="main">
-				<input id="toggle-all" class="toggle-all" type="checkbox" @click="togall" v-model="allActive">
+				<input id="toggle-all" class="toggle-all" type="checkbox"  v-model="allActive">
 				<label for="toggle-all">Mark all as complete</label>
 				<ul class="todo-list">
 					<!-- These are here just to show the structure of the list items -->

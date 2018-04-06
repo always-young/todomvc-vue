@@ -26,7 +26,8 @@
 				get: function () {
 					return this.todos.every(item => item.state);
 				},
-				set: function () {
+				set: function (val) {
+					this.todos.forEach(item=>item.state = val);
 
 				}
 			},
@@ -82,12 +83,6 @@
 			},
 			del(delindex) {
 				this.todos.splice(delindex, 1);
-			},
-			togall(event) {
-				let dom = event.target.checked;
-				this.todos.forEach(todo => {
-					todo.state = dom
-				});
 			},
 			clearCom() {
 
